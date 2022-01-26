@@ -210,6 +210,23 @@
           "name": "formKey",
           "isAttr": true,
           "type": "String"
+        },
+        {
+          "name": "formType",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "formReadOnly",
+          "isAttr": true,
+          "type": "Boolean",
+          "default": false
+        },
+        {
+          "name": "formInit",
+          "isAttr": true,
+          "type": "Boolean",
+          "default": true
         }
       ]
     },
@@ -978,7 +995,90 @@
     },
     {
       "name": "FormProperty",
-      "superClass": [ "Element" ],
+      "superClass": ["Element"],
+      "meta": {
+        "allowedIn": ["bpmn:StartEvent", "bpmn:UserTask"]
+      },
+      "properties": [
+        {
+          "name": "id",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "required",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "readable",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "writable",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "variable",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "expression",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "datePattern",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "default",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "values",
+          "type": "Value",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "FormData",
+      "superClass": ["Element"],
+      "meta": {
+        "allowedIn": ["bpmn:StartEvent", "bpmn:UserTask"]
+      },
+      "properties": [
+        {
+          "name": "fields",
+          "type": "FormField",
+          "isMany": true
+        },
+        {
+          "name": "businessKey",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    {
+      "name": "FormField",
+      "superClass": ["Element"],
       "properties": [
         {
           "name": "id",
